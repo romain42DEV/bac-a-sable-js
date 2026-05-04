@@ -104,7 +104,7 @@ afficherAddition(7,5)
 // return : rien
 
 function afficherPrenom(prenom) {
-    ajouterBalise(`<p>Salut ${prenom}, comment ça va ?</p>`)
+    ajouterBalise(`<p class="red">Salut ${prenom}, comment ça va ?</p>`)
 }
 
 afficherPrenom("romain");
