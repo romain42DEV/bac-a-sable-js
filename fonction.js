@@ -151,6 +151,58 @@ console.log(reponse);  //alert ou confirm
 
 
 
-// rôle : convertit l'euro en dollard, multiplie par 1,17
-// paramètre: le prix
-// return : la conversion
+// rôle : convertir un prix en euro en dollar, multiplier par 1,17
+// paramètre: le prix a convertir et le taux de change
+// return : le prix convertit
+
+function convertion(prix, taux) {
+	return prix * taux;
+}
+
+let resultat2 = convertion(3, 1.17);
+console.log(`le prix convertit est de ${resultat2} dollars`);
+
+
+// rôle : demander un prix et un taux de change a l'utilisateur et covertit le prix
+// paramètre: le prix et taux de change
+// return : prix convertit
+
+function convertisseur() {
+    // demande le prix a convertir
+    let prix = parseFloat(prompt("quel prix veux tu convertir ?")) // typeOf
+
+    // demande le taux
+    let taux = parseFloat(prompt("a quel taux ?"))
+
+    // convertit
+    return prix * taux
+
+    // retourne le résultat
+    
+}
+
+let prixConvertit = convertisseur();
+alert(`le prix convertit est de ${prixConvertit} dollars`);
+
+
+
+// rôle : calculer une moyenne a partir des notes donné par l'utilistateur
+// paramètre: rien
+// return : la moyenne
+
+function moyenne() {
+    // demande les notes
+    let noteMath = parseFloat(prompt("quel note avez vous eu en Math"))
+    let noteFrançais = parseFloat(prompt("quel note avez vous eu en Francais"))
+    let noteHistoire = parseFloat(prompt("quel note avez vous eu en Histoire"))
+    let noteSvt = parseFloat(prompt("quel note avez vous eu en Svt"))
+
+    // calcule la moyenne
+    let moy = (noteMath + noteFrançais + noteHistoire + noteSvt)/4
+
+    // returner la moyenne
+    return moy;
+}
+
+let moyenneEleve = moyenne();
+alert(`votre moyenne est de ${moyenneEleve}`);
