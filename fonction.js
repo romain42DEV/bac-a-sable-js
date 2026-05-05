@@ -121,3 +121,36 @@ function verifMail(mailAverif) {
 }
 
 verifMail("romain.mail@orange.fr");
+
+
+
+// role: retournera toujours la somme des deux valeurs renseignées en argument de cette fonction
+// paramètre: deux valeurs
+// return : le résultat
+
+function addition(a , b) {
+	return a+b;
+}
+
+let resultat = addition(5,4);
+console.log(resultat);
+
+
+
+// role: poser une question
+// paramètre: la question
+// return : la réponse de l'utilisateur à la question
+
+function poseUneQuest(question) {
+    let rep = prompt(question);  // return = prompt(question)
+    return rep;
+}
+
+let reponse = poseUneQuest("comment aller vous");
+console.log(reponse);  //alert ou confirm
+
+
+
+// rôle : convertit l'euro en dollard, multiplie par 1,17
+// paramètre: le prix
+// return : la conversion
