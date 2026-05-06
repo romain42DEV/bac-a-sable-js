@@ -115,24 +115,93 @@ console.log(ticket);
 
 
 // rôle: demande a l'utilisateur la couleur du feu
-// paramètre: couleur du feu,rien
-// retour : je m'arrete, je freine, je passe, danger
+// paramètre: rien
+// retour : rouge vert orange ou autre
 
-function couleurFeu () {
-    let couleur = prompt("Quelle est la couleur du feu ? (rouge, orange, vert)");
+function demanderCouleur () {
+    let reponseUtilisateur = prompt("de quel couleur est le feu ?")
+    return reponseUtilisateur;
+}
 
-    if(couleur === "rouge") {
-        console.log("Je m'arrête !");
-    }else if(couleur === "orange") {
-        console.log("Je freine !");
-    }else if(couleur === "vert") {
-        console.log("Je passe !");
-    }else {
-        console.log("Danger : feu défectueux !");
+// rôle: afficher une indication de conduite en fonction de la couleur du feu
+// paramètre: couleur du feu
+// retour : rien car elle affiche
+
+function afficherInfoConduite(couleurFeu) {
+    // si la couleur du feu est vert -> je passe
+    if(couleurFeu === "vert") {
+        alert("je passe !");
+    }
+    // si la couleur du feu est orange -> je freine
+    else if (couleurFeu === "orange") {
+        alert("je freine !");
+    }
+    // si la couleur du feu est rouge -> je m'arrete
+    else if (couleurFeu === "rouge") {
+        alert("je m'arrête !");
+    }else {  // si la couleur du feu est autre -> danger
+        alert("Danger : feu défectueux !");
     }
 }
 
-couleurFeu();
+function lancerFonctions(){
+    let couleur = demanderCouleur()
+    afficherInfoConduite(couleur)
+}
 
-//let saisie = prompt("Quelle est la couleur du feu ?");
-//console.log(messageFeu(saisie));
+lancerFonctions();
+
+
+
+
+// rôle: calcule la moyenne générale de l'eleve
+// paramètre: les moyennes des notes
+// retour : la moyenne generale
+
+function calculerMoyenne (noteMath, noteFrançais, noteHistoire, noteSvt) {
+    let moyenneG = (noteMath + noteFrançais + noteHistoire + noteSvt)/4
+    return moyenneG
+}
+
+
+
+// rôle: Créer un commentaire a partir de la moyenne générale
+// paramètre: la moyenne générale de l'élève
+// retour : le commentaire
+
+function genererCommentaire (moyGen) {
+    if(moyGen <= 10) { // si la moyenne G est inférieur à 10 -> trvailler plus
+        return "Il faut travailler plus";
+    }else if (moyGen > 10 && moyGen <= 13) {
+        return "Poursuivez vos efforts ";
+    }else if (moyGen > 13 && moyGen <= 15) {
+        return "Bon travail";
+    }else if (moyGen > 15 && moyGen <= 17) {
+        return "Bravo";
+    }else {
+        return "Félicitations !";
+    }
+}
+
+
+
+// rôle: afficher le bulletin
+// paramètre: la moyenne g et le commentaire
+// retour : rien car elle affiche
+
+function afficherBulletin(commentaire, moyenneGenerale, prenomEleve){
+    alert(`La moyenne de l'éléve ${prenomEleve} est : ${moyenneGenerale} et le commentaire est : ${commentaire}`)
+}
+
+// role: jouer le scénario -> calculeMoyenne, commentaire,buletin
+// paramètre: notes
+// return: rien
+
+function scenario(a, b, c, d, prenomEleve) {
+    let moyenneG = calculerMoyenne(a, b, c, d)
+    let commentaire = genererCommentaire(moyenneG)
+    afficherBulletin(commentaire, moyenneG, prenomEleve)
+}
+
+scenario(15,15,12,14,"Romain");
+scenario(8,10,2,4,"nico");
