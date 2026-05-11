@@ -129,3 +129,51 @@ function afficheMoyenne(moyenne){
 
 let moyenneEleve = calculerMoyenne(notes)
 afficheMoyenne(moyenneEleve)
+
+
+
+// exo 2: le panier de fruit
+let tabFruits = ["cerises", "pommes", "cerises", "pommes", "poires", "bananes", 
+"pommes", "poires", "cerises"];
+console.log(fruits[0]);
+
+// role: compter le nombre de chaque fruits
+// paramètre: le tableau des fruits
+// return: le nombre total de chaque fruits
+
+function compterFruit(TableauFruits){
+
+    let compteurPommes = 0;
+    let compteurCerises = 0;
+    let compeurPoires = 0;
+    let compteurBananes = 0;
+    let compteurInconnus = 0;
+
+    tableauFruits.forEach(fruit => {
+
+        if (fruit === "pommes") {
+            compteurPommes++
+        }else if (fruit === "cerises") {
+            compteurCerises++
+        }else if (fruit === "poires") {
+            compteurPoires++
+        }else if (fruit === "bananes") {
+            compteurBananes++
+        }else {
+            compteurInconnus++
+        }
+    });
+
+    return `il y a ${compteurPommes} pommes,
+        il y a ${compteurPoires} poires,
+        il y a ${compteurBananes} bananes,
+        il y a ${compteurCerises} cerises,`
+
+}
+
+function afficherDansPage(aAfficher) {
+    document.querySelector("body").innerHTML += `<p>${aAfficher}</p>`
+}
+
+let = phraseAafficher = compteFruits(tabFruits)
+afficherDansPage(phraseAafficher)
