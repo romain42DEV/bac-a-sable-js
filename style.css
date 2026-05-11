@@ -1,3 +1,32 @@
 .red {
     color: red;
 }
+
+.bg-blue {
+    background-color: blue;
+}
+
+.text-white{
+    color:white;
+}
+
+.mb-50{
+    margin-bottom: 50px;
+}
+
+.flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.space-between{
+    justify-content: space-between;
+}
+
+.w-30 {
+    width: 30%;
+}
+
+.txt-center {
+    text-align: center;
+}

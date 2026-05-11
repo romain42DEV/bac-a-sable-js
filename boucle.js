@@ -135,7 +135,7 @@ afficheMoyenne(moyenneEleve)
 // exo 2: le panier de fruit
 let tabFruits = ["cerises", "pommes", "cerises", "pommes", "poires", "bananes", 
 "pommes", "poires", "cerises"];
-console.log(fruits[0]);
+console.log(tabFruits[0]);
 
 // role: compter le nombre de chaque fruits
 // paramètre: le tableau des fruits
@@ -145,11 +145,11 @@ function compterFruit(TableauFruits){
 
     let compteurPommes = 0;
     let compteurCerises = 0;
-    let compeurPoires = 0;
+    let compteurPoires = 0;
     let compteurBananes = 0;
     let compteurInconnus = 0;
 
-    tableauFruits.forEach(fruit => {
+    tabFruits.forEach(fruit => {
 
         if (fruit === "pommes") {
             compteurPommes++
@@ -164,10 +164,10 @@ function compterFruit(TableauFruits){
         }
     });
 
-    return `il y a ${compteurPommes} pommes,
+    return `Dans le pannier, il y a : ${compteurPommes} pommes,
         il y a ${compteurPoires} poires,
         il y a ${compteurBananes} bananes,
-        il y a ${compteurCerises} cerises,`
+        il y a ${compteurCerises} cerises.`
 
 }
 
@@ -175,5 +175,90 @@ function afficherDansPage(aAfficher) {
     document.querySelector("body").innerHTML += `<p>${aAfficher}</p>`
 }
 
-let = phraseAafficher = compteFruits(tabFruits)
+let = phraseAafficher = compterFruit(tabFruits)
 afficherDansPage(phraseAafficher)
+
+
+
+// code cesar
+
+// role: encoder un message
+// paramètre: le mot a encoder
+// return: le mot encodé
+
+function codeCesar(motAencoder){
+    // un alphabet
+    const alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"]
+    let motEncode = "";
+
+    // récupérer les lettres du mot une par une
+    for(let i=0; i < motAencoder.length; i++) {
+        let lettreEncode = "";
+
+        // on stock le caractère a la position i du mot
+        let = lettreActuelle = motAencoder.charAt(i)
+        console.log(lettreActuelle);
+
+        if(lettreActuelle === "z"){
+            lettreEncode = "a"
+        }else {
+
+        // quand il aura récupérer une lettre il va chercher la position de cette lettre dans l'alphabet
+        //-> stock dans une variable posLettreActuelle
+        let posLettreActuelle = alphabet.indexOf(lettreActuelle)
+        console.log(posLettreActuelle);
+
+        // va chercher la lettre à la position suivante
+        lettreEncode = alphabet[posLettreActuelle + 1]
+        console.log(lettreEncode)
+
+        }
+
+        // stock dans une variable pour recomposer le mot encoder
+        motEncode = motEncode + lettreEncode // motEncode += lettreEncode
+        console.log(motEncode)
+    }
+
+    // return le mot encode
+    return motEncode
+    
+}
+
+
+function afficheDansBody(trucAafficher){
+    document.querySelector("body").innerHTML += `<p>${trucAafficher}</p>`
+}
+
+function scenario(motAencoder){
+    let motEncode = codeCesar(motAencoder)
+    afficheDansBody(motEncode)
+}
+
+
+
+// jacKpot
+//Créer une fonction
+// role: choisir 3 emojis
+//paramètre : tableau avec tous les emojis possibles(entre 3 et 5)
+// return: les 3 emojis selectioné
+
+function emojiAlea(tableauEmoji){
+    //créer le tableau d'emoji
+
+    //tirer 3 chiffre aleatoirement -> Math.floor(Math.random()*3)
+
+    //attribuer un emoji a chaque chiffre tiré -> si on tire 0 on va chercher l'emoji a la position 0 dans le tableau
+
+    //stocker mes emojis dans une boite -> je reconstruit un tableau avec les emoji piochés
+
+    //retourner les emojis pioché
+}
+
+// role: comparer les emojis pour définir si victoire
+// paramètre: les emojis piochés -> un tableau
+// return: true/false -> boolean
+
+
+// role: afficher le resultat dans le body
+// paramètre: les emojis pioché, et le resultat
+// return: rien car elle affiche
