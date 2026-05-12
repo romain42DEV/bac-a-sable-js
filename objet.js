@@ -1,3 +1,5 @@
+/*
+
 let auteur = { // un objet
 
 prenom:'Ernest', // clé "prenom" valeur de stockage "Ernest"
@@ -62,8 +64,95 @@ function ficheEleveDansDom(tableauPromo11) {
 
 }
 
+
+ficheEleveDansDom(promo11)
+
+
+
+// exo recette
+
+// V1
+let recette={
+  nom:"poulet rôti au thym et à l'ail",
+  difficulte: "Facile",
+  tempPreparation: "15 min",
+  tempCuisson: "1h 15 min",
+  nbrPortions: 6,
+  ingredients : ["huile d'olive","beurre fondu","feuilles de thym","sel","poivre","ail"]
+}
+
+console.log(`
+    Recette du ${recette.nom} 
+    Difficulté: ${recette.difficulte} 
+    Temp de préparation: ${recette.tempPreparation} 
+    Temp de cuisson: ${recette.tempCuisson} 
+    pour ${recette.nbrPortions} personnes 
+    listes des ingrédients : ${recette.ingredients}
+    `);
+*/
+// V2
+
+
 function ajouterAuBody(trucAafficher){
     document.querySelector("body").innerHTML += trucAafficher
 }
 
-ficheEleveDansDom(promo11)
+let recettes = [
+  {
+    nom: "poulet rôti au thym et à l'ail",
+    difficulte: "Facile",
+    tempPreparation: "15 min",
+    tempCuisson: "1h 15 min",
+    nbrPortions: 6,
+    ingredients: ["huile d'olive","beurre fondu","feuilles de thym","sel","poivre","ail"]
+  },
+  {
+    nom: "spaghetti à la bolognaise",
+    difficulte: "Moyenne",
+    tempPreparation: "20 min",
+    tempCuisson: "40 min",
+    nbrPortions: 4,
+    ingredients: ["spaghetti","viande hachée","oignon","carotte","tomate concassée","ail","huile d'olive","sel","poivre"]
+  },
+  {
+    nom: "salade César",
+    difficulte: "Facile",
+    tempPreparation: "15 min",
+    tempCuisson: "0 min",
+    nbrPortions: 2,
+    ingredients: ["laitue romaine","croûtons","parmesan râpé","filet de poulet","sauce César","sel","poivre"]
+  }
+];
+
+
+// role : récupérer les recettes une par une pour les afficher
+// paramètre : le tableau des recettes
+// return: rien
+
+function ficheRecette(tableauRecettes) {
+
+    // récupérer les recettes une par une
+    tableauRecettes.forEach(recette => {
+        let ingredientsListe = "";
+
+        recette.ingredients.forEach(ingredient => {
+            ingredientsListe += `<li> ${ingredient}</li>`
+            console.log(ingredientsListe)
+            
+        });
+        // Quan il en tiens une il l'affiche
+        ajouterAuBody(`
+            <div>
+                <h2>Titre rectte: ${recettes[0].nom}</h2>
+                <p>Difficulté: ${recettes[0].difficulte}</p>
+                <p>Temps de préparation: ${recettes[0].tempPreparation}</p>
+                <p>Temps de cuisson: ${recettes[0].tempCuisson}</p>
+                <p>Nombre de portions: ${recettes[0].nbrPortions}</p>
+                <p>Listes des ingrédients : </p>
+                <ul>
+                    ${ingredientsListe}
+                </ul>
+            </div>
+        `)
+    });
+}
