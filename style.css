@@ -58,8 +58,8 @@
 }
 
 .hero {
-    height: 50vh;
-    background-image: url("");
+    height: 90vh;
+    background-image: url("ciel.jpg");
 }
 
 header {
@@ -71,10 +71,10 @@ header {
 }
 
 header a {
-    color: black;
+    color: white;
     text-decoration: none;
 }
 
 .bg-bleu {
-    background-color: rgb(48, 48, 150);
+    background-color: rgb(27, 27, 39);
 }

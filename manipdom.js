@@ -26,10 +26,17 @@ let btnJouer = document.querySelector("#btnJouer");
 btnJouer.addEventListener("click", jouer);
 
 
-
 function jouer(){
     scenario(emojisArray)
 }
+
+/*
+let btnJ = document.querySelector("#btnJouer")
+ 
+btnJ.addEventListener("click" , function(){
+    scenario(emojisArray)
+})
+*/
 
 
 // jackpot ludivine
