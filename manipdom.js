@@ -9,7 +9,7 @@ paragrapheAmettreEnRouge.classList.toggle("bg-yellow")
 let bouton = document.querySelector("#btn")
 
 bouton.addEventListener("click", creerunP() {
-    console.log(e)
+    console.log()
 })
 
 function creerunP () {
@@ -18,16 +18,18 @@ function creerunP () {
 */
 
 function ajouterAuBody(trucAafficher){
-    document.querySelector("#resultat").innerHTML = trucAafficher
-}
+    document.querySelector("#resultat").innerHTML = trucAafficher;
+};
 
-let btnJouer = document.querySelector("#btnJouer")
+let btnJouer = document.querySelector("#btnJouer");
 
-btnJouer.addEventListener("click", function(){
+btnJouer.addEventListener("click", jouer);
+
+
+
+function jouer(){
     scenario(emojisArray)
-})
-
-
+}
 
 
 // jackpot ludivine
@@ -118,14 +120,7 @@ function afficherResultat(emojisPioche, resultat) {
 }
 
 
-//role : Ajouter des élements au body
-//parametre : ce qu'il faut afficher 
-//return : rien car elle affiche dans le body
-function ajouterAuBody(trucAafficher) {
 
-    document.querySelector("body").innerHTML += trucAafficher
-
-}
 
 function scenario(tableauEmojis){
     let emojisPioches = emojiAlea(tableauEmojis);
@@ -133,4 +128,62 @@ function scenario(tableauEmojis){
     afficherResultat(emojisPioches, conclusionResultat)
 }
 
-scenario(emojisArray)
+//scenario(emojisArray)
+
+
+
+// exo 1
+document.querySelector("h1").style.color = "green" ;
+
+
+// exo 2
+//fonction toggle
+// role :cacher et afficher l'element
+// paramètre: hide
+// return: rien
+
+function cacheEtAffiche() {
+    document.querySelector("#hide").classList.toggle("hide");
+}
+
+// au clic
+btn.addEventListener("click", cacheEtAffiche);
+
+//lance la fonction
+//cacheEtAffiche(hide);
+
+
+// exo 3
+let boites = document.querySelectorAll(".boite")
+console.log(boites);
+
+// je parcours mon tableau de div
+boites.forEach(boite => {
+    boite.addEventListener("click",function() {
+        //je reset
+        reset()
+        // j'ai la boite sur laquelle j'ai cliqué
+        console.log(boite)
+        boite.classList.toggle("bg-red")
+    })
+})
+
+// role: reset (enlève la classe bg-red a toutes les div qui on la classe boite)
+// paramètre : non
+// retour: non
+function reset() {
+    let boites = document.querySelectorAll(".boite")
+    boites.forEach(boite => {
+        boite.classList.remove("bg-red")
+    })
+}
+
+// exo 4
+let nombreClics = 0;
+
+function comptage() {
+  nombreClics++;
+  document.getElementById("nombreClics").textContent   = nombreClics;
+}
+
+document.getElementById("btncompter").addEventListener("click", comptage);
