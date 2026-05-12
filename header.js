@@ -9,9 +9,9 @@ window.addEventListener("scroll", function() {
     // si l'utilisateur a scrollé plus bas que le hero
     if(window.scrolly > hero.clientHeight) {
         // je donne au header une classe qui change le background
-        header.classList.add("bg-bleu")
+        header.classList.add(".bg-bleu")
     }else {
         // sinon
-        header.classList.remove("bg-bleu")
+        header.classList.remove(".bg-bleu")
     }
 })
