@@ -140,7 +140,7 @@ function scenario(tableauEmojis){
 
 
 // exo 1
-document.querySelector("h1").style.color = "green" ;
+document.querySelector("h1").style.color = "green";
 
 
 // exo 2
