@@ -1,3 +1,4 @@
+/*
 // jeu du Guess the number
 
 //l'ordinateur pioche un nombre aleatoire
@@ -140,3 +141,4 @@ function jouer() {
 }
 
 jouer();
+*/
