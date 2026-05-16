@@ -32,7 +32,7 @@ function indiquePlusOuMoins(nbrPioche, choixUtilisateur) {
 
     // si le nombre choisi est inferieur à la réponse utilisateur -> "c'est moins"
     if (choixUtilisateur > 20) {
-        alert("ereur")
+        alert("erreur")
     }
 
     else if (nbrPioche < choixUtilisateur) {
