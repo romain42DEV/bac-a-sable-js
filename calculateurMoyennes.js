@@ -30,11 +30,12 @@ function reponseUtilisateur() {
 //return : rien car elle affiche 
 function indiquePlusOuMoins(nbrPioche, choixUtilisateur) {
 
-    // si le nombre choisi est inferieur à la réponse utilisateur -> "c'est moins"
+    // si le nombre utilisateur est supérieur à 20 -> "erreur"
     if (choixUtilisateur > 20) {
         alert("erreur")
     }
 
+    // si le nombre choisi est inferieur à la réponse utilisateur -> "c'est moins"
     else if (nbrPioche < choixUtilisateur) {
         alert("c'est moins")
     }
